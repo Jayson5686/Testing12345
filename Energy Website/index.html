@@ -1,0 +1,345 @@
+<!--
+================================================================================
+ENERGY DATA WEBSITE
+================================================================================
+A comprehensive data visualization website displaying energy production metrics
+and trends from 2020-2024, including solar, wind, hydro, and natural gas sources.
+
+Author: Energy Analytics Team
+Date: 2026
+Version: 1.0
+================================================================================
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- =========================================================================
+     HEAD SECTION
+     =========================================================================
+     Purpose: Document metadata, character encoding, viewport settings, and
+     stylesheet linking. This section defines how the browser should interpret
+     and render the HTML document.
+     ========================================================================= -->
+<head>
+
+    <!-- Character Encoding: UTF-8 for international character support -->
+    <meta charset="UTF-8">
+
+    <!-- Viewport: Responsive design settings for mobile devices -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Page Title: Displayed in browser tab and search results -->
+    <title>Energy Data</title>
+
+    <!-- External Stylesheet: All styling and responsive design rules -->
+    <link rel="stylesheet" href="css/styles.css">
+
+</head>
+
+<!-- =========================================================================
+     BODY SECTION
+     =========================================================================
+     Purpose: Main content container for all visible page elements including
+     header, hero section, statistics, charts, data table, and footer.
+     ========================================================================= -->
+<body>
+
+    <!-- =====================================================================
+         1. HEADER & NAVIGATION
+         =====================================================================
+         Purpose: Sticky navigation bar at top of page
+         Contains: Logo/Brand, Company name, Navigation menu links
+         Features: Remains visible when scrolling (position: sticky)
+         ===================================================================== -->
+    <header class="header">
+        <div class="container nav">
+            <div class="brand">
+                <img src="images/PowerIcon.png" alt="Energy">
+                <div>
+                    <h1>Energy Data</h1>
+                    <p>Energy production overview</p>
+                </div>
+            </div>
+
+            <nav>
+                <a href="#overview">Overview</a>
+                <a href="#sources">Sources</a>
+                <a href="#dataset">Dataset</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- =====================================================================
+         2. HERO SECTION
+         =====================================================================
+         Purpose: Large banner introducing the website
+         Contains: Main headline, description, CTA button, hero image
+         Features: Gradient background, eye-catching typography
+         ===================================================================== -->
+    <section class="hero">
+        <div class="container hero-content">
+            <div class="hero-text">
+                <!-- Category Label -->
+                <p class="small-title">ENERGY INFORMATION</p>
+
+                <!-- Main Headline -->
+                <h2>Understanding <span>Energy</span></h2>
+
+                <!-- Description -->
+                <p class="description">
+                    Explore electricity production from solar, wind, hydro and
+                    natural gas between 2020 and 2024.
+                </p>
+
+                <!-- Call-to-Action Button -->
+                <a href="#dataset" class="button">View Dataset</a>
+            </div>
+
+            <!-- Hero Image -->
+            <div class="hero-image">
+                <img src="images/PowerIcon.png" alt="Energy icon">
+            </div>
+        </div>
+    </section>
+
+    <!-- =====================================================================
+         MAIN CONTENT AREA
+         =====================================================================
+         Purpose: Container for main page sections (Overview, Chart,
+         Sources, Dataset)
+         ===================================================================== -->
+    <main>
+
+        <!-- =====================================================================
+             3. OVERVIEW SECTION - STATISTICS CARDS
+             =====================================================================
+             Purpose: Display key energy metrics in 4 cards
+             - Total Production, Renewable Energy, Solar Production, Latest Year
+             Features: Color-coded card indicators (blue, green, orange, purple)
+             Data Source: Calculated dynamically from CSV dataset
+             ===================================================================== -->
+        <section id="overview" class="section">
+            <div class="container">
+                <div class="section-title">
+                    <p>OVERVIEW</p>
+                    <h2>Energy at a glance</h2>
+                    <span>Summary calculated directly from the dataset.</span>
+                </div>
+
+                <!-- Statistics Cards Grid -->
+                <div class="cards">
+
+                    <!-- Card 1: Total Production -->
+                    <div class="card">
+                        <div class="card-top blue"></div>
+                        <p>Total Production</p>
+                        <h3 id="totalProduction">--</h3>
+                        <span>GWh</span>
+                    </div>
+
+                    <!-- Card 2: Renewable Energy -->
+                    <div class="card">
+                        <div class="card-top green"></div>
+                        <p>Renewable Energy</p>
+                        <h3 id="renewableProduction">--</h3>
+                        <span>GWh</span>
+                    </div>
+
+                    <!-- Card 3: Solar Production -->
+                    <div class="card">
+                        <div class="card-top orange"></div>
+                        <p>Solar Production</p>
+                        <h3 id="solarProduction">--</h3>
+                        <span>GWh</span>
+                    </div>
+
+                    <!-- Card 4: Latest Year -->
+                    <div class="card">
+                        <div class="card-top purple"></div>
+                        <p>Latest Year</p>
+                        <h3 id="latestYear">--</h3>
+                        <span>Dataset</span>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+
+
+        <!-- =====================================================================
+             4. CHART SECTION - PRODUCTION TREND VISUALIZATION
+             =====================================================================
+             Purpose: Display a line chart showing total energy production trends
+             Features: Canvas-based chart, grid lines, data points, year labels
+             Data Source: Calculated from CSV dataset (sum of all sources per year)
+             ===================================================================== -->
+        <section class="section chart-section">
+            <div class="container">
+                <div class="section-title">
+                    <p>PRODUCTION TREND</p>
+                    <h2>Total energy production</h2>
+                    <span>Values are calculated from the CSV dataset.</span>
+                </div>
+
+                <!-- Chart Container -->
+                <div class="chart-box">
+                    <canvas id="energyChart"></canvas>
+                </div>
+            </div>
+        </section>
+
+
+
+        <!-- =====================================================================
+             5. ENERGY SOURCES SECTION - PERCENTAGE BREAKDOWN
+             =====================================================================
+             Purpose: Display percentage breakdown by source type
+             - Solar (Orange), Wind (Blue), Hydro (Cyan), Gas (Red)
+             Features: 4 cards in 2-column grid, animated progress bars
+             Data Source: Percentage of total production across all years
+             ===================================================================== -->
+        <section id="sources" class="section">
+            <div class="container">
+                <div class="section-title">
+                    <p>ENERGY SOURCES</p>
+                    <h2>Energy production sources</h2>
+                    <span>Percentage of total production across all years.</span>
+                </div>
+
+                <!-- Sources Grid -->
+                <div class="source-grid">
+
+                    <!-- Source 1: Solar Energy -->
+                    <div class="source">
+                        <div class="source-heading">
+                            <h3>Solar</h3>
+                            <strong id="solarPercentage">--</strong>
+                        </div>
+                        <div class="bar">
+                            <div id="solarBar" class="bar-fill solar"></div>
+                        </div>
+                    </div>
+
+                    <!-- Source 2: Wind Energy -->
+                    <div class="source">
+                        <div class="source-heading">
+                            <h3>Wind</h3>
+                            <strong id="windPercentage">--</strong>
+                        </div>
+                        <div class="bar">
+                            <div id="windBar" class="bar-fill wind"></div>
+                        </div>
+                    </div>
+
+                    <!-- Source 3: Hydro Energy -->
+                    <div class="source">
+                        <div class="source-heading">
+                            <h3>Hydro</h3>
+                            <strong id="hydroPercentage">--</strong>
+                        </div>
+                        <div class="bar">
+                            <div id="hydroBar" class="bar-fill hydro"></div>
+                        </div>
+                    </div>
+
+                    <!-- Source 4: Natural Gas Energy -->
+                    <div class="source">
+                        <div class="source-heading">
+                            <h3>Natural Gas</h3>
+                            <strong id="gasPercentage">--</strong>
+                        </div>
+                        <div class="bar">
+                            <div id="gasBar" class="bar-fill gas"></div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+
+
+        <!-- =====================================================================
+             6. DATASET SECTION - COMPLETE DATA TABLE
+             =====================================================================
+             Purpose: Display complete energy production dataset in table format
+             Features: Columns for Year, Solar, Wind, Hydro, Natural Gas, Total
+             Data Source: Loaded from data/data.csv
+             Additional: Row hover effects, error messaging, responsive scrolling
+             ===================================================================== -->
+        <section id="dataset" class="section dataset-section">
+            <div class="container">
+                <div class="section-title">
+                    <p>DATASET</p>
+                    <h2>Energy production data</h2>
+                    <span>Values loaded directly from data/data.csv</span>
+                </div>
+
+                <!-- Data Table -->
+                <div class="table-box">
+                    <table>
+                        <!-- Table Header -->
+                        <thead>
+                            <tr>
+                                <th>Year</th>
+                                <th>Solar</th>
+                                <th>Wind</th>
+                                <th>Hydro</th>
+                                <th>Natural Gas</th>
+                                <th>Total</th>
+                            </tr>
+                        </thead>
+
+                        <!-- Table Body (populated by JavaScript) -->
+                        <tbody id="energyTable">
+                            <tr>
+                                <td colspan="6">Loading dataset...</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Error Message -->
+                <p id="errorMessage" class="error"></p>
+            </div>
+        </section>
+
+    </main>
+
+
+
+    <!-- =====================================================================
+         7. FOOTER
+         =====================================================================
+         Purpose: Website footer with company information and branding
+         Contains: Company name, tagline, copyright information
+         Features: Dark background, responsive layout
+         ===================================================================== -->
+    <footer>
+        <div class="container footer">
+            <div>
+                <h3>Energy Data</h3>
+                <p>Energy production overview</p>
+            </div>
+            <p>Energy Data Website</p>
+        </div>
+    </footer>
+
+    <!-- =====================================================================
+         SCRIPTS
+         =====================================================================
+         Purpose: Load and execute JavaScript for data processing
+         Functionality:
+         - Fetch and parse CSV data from data/data.csv
+         - Calculate statistics (total, renewable, solar, latest year)
+         - Generate and render chart visualization
+         - Populate table with dataset rows
+         - Calculate and display energy source percentages
+         - Handle errors and loading states
+         ===================================================================== -->
+    <script src="js/scripts.js"></script>
+
+</body>
+</html>
