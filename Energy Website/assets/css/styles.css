@@ -1,0 +1,192 @@
+/* base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f4f6f9;
+    color: #1e3a5f;
+    line-height: 1.6;
+}
+
+.container {
+    width: 90%;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+a {
+    color: #1e3a5f;
+}
+
+/* top nav */
+.header {
+    background: #1e3a5f;
+    border-bottom: 3px solid #f0b429;
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 70px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    color: #fff;
+}
+
+.logo img {
+    width: 40px;
+    height: 40px;
+}
+
+.logo span {
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.logo:hover {
+    color: #f0b429;
+}
+
+.menu {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+}
+
+.menu a {
+    text-decoration: none;
+    color: #d9e2ec;
+    font-weight: bold;
+    padding: 6px 0;
+    border-bottom: 2px solid transparent;
+}
+
+.menu a:hover {
+    color: #f0b429;
+    border-bottom-color: #f0b429;
+}
+
+/* current page */
+.menu a.active {
+    color: #f0b429;
+    border-bottom-color: #f0b429;
+}
+
+/* page content */
+main {
+    padding: 40px 0 60px;
+}
+
+h1 {
+    font-size: 28px;
+    margin-bottom: 12px;
+}
+
+h2 {
+    font-size: 22px;
+    margin: 28px 0 12px;
+    color: #1e3a5f;
+}
+
+p {
+    margin-bottom: 12px;
+}
+
+.intro {
+    background: #fff;
+    border-left: 4px solid #f0b429;
+    padding: 18px 20px;
+    margin-bottom: 24px;
+}
+
+/* FAQ accordion */
+.faq-item {
+    background: #fff;
+    border: 1px solid #d9e2ec;
+    margin-bottom: 10px;
+}
+
+.faq-question {
+    width: 100%;
+    text-align: left;
+    background: #fff;
+    border: none;
+    padding: 14px 16px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #1e3a5f;
+    cursor: pointer;
+}
+
+.faq-question:hover {
+    background: #eef3f8;
+}
+
+.faq-answer {
+    display: none;
+    padding: 0 16px 14px;
+    color: #334e68;
+}
+
+.faq-item.open .faq-answer {
+    display: block;
+}
+
+/* simple list / table bits for televisions page */
+.tv-list {
+    list-style: disc;
+    margin-left: 22px;
+}
+
+.tv-list li {
+    margin-bottom: 8px;
+}
+
+.info-box {
+    background: #fff;
+    padding: 18px 20px;
+    border: 1px solid #d9e2ec;
+    margin-top: 16px;
+}
+
+/* footer */
+footer {
+    background: #1e3a5f;
+    color: #d9e2ec;
+    padding: 22px 0;
+    font-size: 14px;
+}
+
+footer p {
+    margin-bottom: 6px;
+}
+
+footer .year-name {
+    color: #f0b429;
+    font-weight: bold;
+}
+
+/* small screens */
+@media (max-width: 600px) {
+    .nav {
+        flex-direction: column;
+        gap: 12px;
+        padding: 12px 0;
+    }
+
+    .menu {
+        gap: 14px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
