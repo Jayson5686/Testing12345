@@ -36,3 +36,16 @@ Open `index.html` in a browser, or use Live Server in VS Code.
 
 ## Reference Video for structuring the concept of Energy Website
   -
+weewewe
+
+qweqeqe
+
+qeqeqwe
+
+qeqweq
+wwe
+qweqwe
+qweqww
+e
+ typo
+ 
