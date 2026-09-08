@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Storyboard | Appliance Energy Consumption</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+
+    <!-- nav -->
+    <header class="header">
+        <div class="container nav">
+            <a class="logo" href="index.html">
+                <img src="assets/img/PowerIcon.png" alt="Power logo">
+                <span>Appliance Energy</span>
+            </a>
+            <ul class="menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="televisions.html">Televisions</a></li>
+                <li><a class="active" href="storyboard.html">Storyboard</a></li>
+                <li><a href="about.html">About Us</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <main class="container">
+        <h1>Data storyboard</h1>
+
+        <div class="intro">
+            <p>
+                This page sets out the data story for television energy use:
+                who it is for, why it is being told, and the consumer questions
+                the KNIME charts are meant to answer. Open one section at a
+                time, the same way as the FAQ on Home.
+            </p>
+        </div>
+
+        <div class="storyboard">
+            <div class="story-item">
+                <button type="button" class="story-frame">
+                    <span class="story-num">1</span>
+                    <span class="story-title">Target audience</span>
+                </button>
+                <div class="story-detail">
+                    <p>
+                        The main target audience for this data story is consumers
+                        who are interested in purchasing a television with lower
+                        energy consumption. These consumers may want to understand
+                        whether factors such as screen size, television model, and
+                        energy-efficiency rating have a noticeable effect on how
+                        much electricity a television uses.
+                    </p>
+                    <p>
+                        Many buyers usually compare features such as display size,
+                        picture quality, brand, and price, but energy consumption
+                        may also affect the long-term cost of owning a television.
+                        This data story is therefore designed to make
+                        energy-related information easier to understand by
+                        presenting comparisons between different televisions.
+                    </p>
+                    <p>
+                        The findings may also be useful to policy makers,
+                        regulators, and researchers who are interested in general
+                        patterns of energy efficiency in consumer electronics.
+                    </p>
+                </div>
+            </div>
+
+            <div class="story-item">
+                <button type="button" class="story-frame">
+                    <span class="story-num">2</span>
+                    <span class="story-title">Purpose of the story</span>
+                </button>
+                <div class="story-detail">
+                    <p>
+                        The purpose of this data story is to investigate how
+                        different television characteristics are related to energy
+                        consumption and to present the results in a way that is
+                        useful for consumers. The story will examine factors such
+                        as screen size, energy-efficiency rating, and differences
+                        between television models to identify patterns in energy
+                        usage.
+                    </p>
+                    <p>
+                        For example, it will explore whether larger televisions
+                        tend to consume more energy, whether televisions with
+                        better efficiency ratings generally use less electricity,
+                        and whether televisions with similar specifications can
+                        still have different levels of energy consumption.
+                    </p>
+                    <p>
+                        By using comparisons and visualisations, the story aims
+                        to help consumers recognise which factors may have a
+                        greater influence on energy use and encourage them to
+                        consider energy efficiency alongside other features when
+                        choosing a television.
+                    </p>
+                </div>
+            </div>
+
+            <div class="story-item">
+                <button type="button" class="story-frame">
+                    <span class="story-num">3</span>
+                    <span class="story-title">Audience concerns</span>
+                </button>
+                <div class="story-detail">
+                    <p>
+                        Consumers may want to know whether choosing a larger
+                        screen size will significantly increase energy
+                        consumption, whether a better energy-efficiency rating
+                        results in lower energy use, and whether televisions with
+                        similar sizes can still have different levels of energy
+                        consumption. The charts below are prepared in KNIME and
+                        can be dropped into the placeholder boxes when ready.
+                    </p>
+
+                    <h3>Does choosing a larger TV increase energy consumption?</h3>
+                    <figure class="story-figure">
+                        <div class="chart-placeholder">
+                            Insert picture: average energy consumption by screen size
+                        </div>
+                        <figcaption>KNIME chart: energy use across small, medium and large TVs.</figcaption>
+                    </figure>
+                    <p>
+                        As shown in the chart, large televisions have the highest
+                        average energy consumption at approximately 741.30
+                        kWh/year, compared with 402.73 kWh/year for medium
+                        televisions and 157.98 kWh/year for small televisions.
+                        This shows a clear increase in average energy consumption
+                        across the three screen-size groups, suggesting that
+                        screen size is an important factor for consumers to
+                        consider when choosing an energy-efficient television.
+                    </p>
+
+                    <h3>Does a better energy rating generally mean lower energy consumption?</h3>
+                    <figure class="story-figure">
+                        <div class="chart-placeholder">
+                            Input picture later: scatter plot of energy rating vs labelled energy use
+                        </div>
+                        <figcaption>KNIME scatter plot: star rating against labelled energy consumption.</figcaption>
+                    </figure>
+                    <p>
+                        As shown in the scatter plot, televisions with higher
+                        energy ratings generally have lower labelled energy
+                        consumption. In contrast, televisions with lower star
+                        ratings are more likely to have higher energy usage.
+                        Although the points are spread out within each rating,
+                        the overall pattern suggests that energy rating is an
+                        important indicator of how much energy a television
+                        consumes.
+                    </p>
+
+                    <h3>Do different TV models use very different amounts of energy?</h3>
+                    <p>
+                        For TVs of similar sizes, does screen technology affect
+                        average energy consumption?
+                    </p>
+                    <figure class="story-figure">
+                        <div class="chart-placeholder">
+                            Insert picture: average energy use by screen size and technology
+                        </div>
+                        <figcaption>KNIME chart: screen technology compared within size groups.</figcaption>
+                    </figure>
+                    <p>
+                        As shown in the chart, TVs of the same size can still
+                        have different levels of energy consumption depending on
+                        their screen technology. LCD models have the lowest
+                        average energy consumption across the three size groups
+                        in this dataset, while the difference between LCD (LED)
+                        and OLED changes depending on the TV size. This means
+                        that screen technology can make a difference, but
+                        consumers should consider it together with screen size
+                        rather than looking at the technology alone.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- footer -->
+    <footer>
+        <div class="container">
+            <p class="year-name">&copy; 2026 Jayson</p>
+            <p>
+                Generative AI was used to help structure and check parts of
+                this website. Final code and wording were reviewed by me.
+            </p>
+        </div>
+    </footer>
+
+    <script src="assets/js/scripts.js"></script>
+</body>
+</html>

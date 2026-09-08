@@ -6,6 +6,7 @@ Small multi-page site for a web development exercise. It uses HTML, CSS and Java
 
 - `index.html` – Home (Australian appliance energy intro + FAQ accordion)
 - `televisions.html` – Televisions overview
+- `storyboard.html` – Data storyboard (audience, purpose, consumer questions)
 - `about.html` – About the project
 
 ## Folder structure
@@ -14,6 +15,7 @@ Small multi-page site for a web development exercise. It uses HTML, CSS and Java
 /
   index.html
   televisions.html
+  storyboard.html
   about.html
   assets/
     css/styles.css
@@ -27,6 +29,7 @@ Small multi-page site for a web development exercise. It uses HTML, CSS and Java
 - Shared top navigation with logo (logo goes back to Home)
 - Hover styles and active page highlight
 - FAQ accordion on the Home page (JavaScript)
+- Storyboard page with a one-open-at-a-time accordion for the TV energy data story
 - Shared footer with year, name and GenAI acknowledgement
 - External CSS used on all pages
 

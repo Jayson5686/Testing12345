@@ -1,6 +1,7 @@
 // FAQ accordion - show/hide answers when a question is clicked
 document.addEventListener("DOMContentLoaded", function () {
     setupFaq();
+    setupStoryboard();
     setupCalculator();
 });
 
@@ -19,6 +20,27 @@ function setupFaq() {
             }
 
             // reopen only if it was closed
+            if (!wasOpen) {
+                item.classList.add("open");
+            }
+        });
+    }
+}
+
+// storyboard accordion - same one-open-at-a-time pattern as FAQ
+function setupStoryboard() {
+    var frames = document.querySelectorAll(".story-frame");
+
+    for (var i = 0; i < frames.length; i++) {
+        frames[i].addEventListener("click", function () {
+            var item = this.parentElement;
+            var wasOpen = item.classList.contains("open");
+
+            var allItems = document.querySelectorAll(".story-item");
+            for (var j = 0; j < allItems.length; j++) {
+                allItems[j].classList.remove("open");
+            }
+
             if (!wasOpen) {
                 item.classList.add("open");
             }
